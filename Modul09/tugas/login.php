@@ -1,0 +1,38 @@
+<?php
+    session_start();
+    error_reporting(E_ALL^E_NOTICE^E_DEPRECATED);
+    $koneksi = mysqli_connect('localhost','root','','informatika');
+    $username=$_POST['Username'];
+    $password=$_POST['Password'];
+    $submit=$_POST['submit'];
+    if($submit){
+        $sql="select * from user where Username='$username' and Password='$password'";
+        $query=mysqli_query($koneksi,$sql);
+        $cek=mysqli_num_rows($query);
+        if($cek>0){
+            $row = mysqli_fetch_assoc($query);
+            if($row['Status']=='Administrator'){
+                $_SESSION['Username']=$row['Username'];
+                $_SESSION['Status']='Administrator';
+                header("location:admin.php");
+            }elseif($row['Status']=='Member'){
+                $_SESSION['Username']=$row['Username'];
+                $_SESSION['Status']='Member';
+                header("location:member.php");
+            }
+        }else{
+            echo "<script>
+                    alert('Login Gagal, silahkan coba lagi');
+                    document.location='login.php';
+                  </script>";
+        }
+    }
+?>
+
+<form method='post' action='login.php'>
+<p align='center'>
+username : <input type='text' name='Username'><br>
+password : <input type='password' name='Password'><br>
+<input type='submit' name='submit'>
+</p>
+</form>
