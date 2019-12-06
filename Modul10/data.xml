@@ -1,0 +1,34 @@
+<?xml version='1.0'?>
+<?xml-stylesheet type='text/css' href='data2.css'?>
+<Mahasiswa>
+<ID>
+<NIM>L200170114</NIM>
+<Nama>Nafiah Nurrahmah</Nama>
+<Kota>Solo</Kota>
+</ID>
+
+<ID>
+<NIM>L200170001</NIM>
+<Nama>Nafiah</Nama>
+<Kota>Solo</Kota>
+</ID>
+
+<ID>
+<NIM>L200170002</NIM>
+<Nama>Nurrahmah</Nama>
+<Kota>Solo</Kota>
+</ID>
+
+<ID>
+<NIM>L200170003</NIM>
+<Nama>Rahmah</Nama>
+<Kota>Solo</Kota>
+</ID>
+
+<ID>
+<NIM>L200170004</NIM>
+<Nama>Nur</Nama>
+<Kota>Solo</Kota>
+</ID>
+
+</Mahasiswa>
